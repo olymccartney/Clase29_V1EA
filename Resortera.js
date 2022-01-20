@@ -6,6 +6,11 @@ class SlingShot{
             stiffness: 0.04,
             length: 10
         }
+        //Precargar las Imagenes de la Resortera
+        this.sling1 = loadImage("sprites/sling1.png");
+        this.sling2 = loadImage("sprites/sling2.png");
+        this.sling3 = loadImage("sprites/sling3.png");
+        
         this.pointB = pointB
         this.sling = Constraint.create(options);
         World.add(world, this.sling);
@@ -16,11 +21,20 @@ class SlingShot{
     }
 
     display(){
+        //Mostrar Imagenes
+        image(this.sling1,200,20);
+        image(this.sling2,170,20);
+
         if(this.sling.bodyA){
             var pointA = this.sling.bodyA.position;
             var pointB = this.pointB;
+            
             strokeWeight(4);
-            line(pointA.x, pointA.y, pointB.x, pointB.y);
+            
+
+
+            //Linea de Anclaje Oculta
+            //line(pointA.x, pointA.y, pointB.x, pointB.y);
         }
     }
     
